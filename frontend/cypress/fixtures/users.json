@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "firstName": "Henk",
+    "lastName": "Kaas",
+    "email": "henk@kaas.be",
+    "films":[
+      {
+        "id":1,
+        "titel": "Shawshank Redemption",
+        "score": 93,
+        "acteurs":[{
+
+        }],
+        "genres":[{
+          "genreId":1,
+          "filmId":1
+        }],
+        "titleImage":"zefokef",
+        "runtime":200,
+        "year":1997
+      }
+    ]
+  
+  },
+  {
+    "id": 2,
+    "firstName": "Joost",
+    "lastName": "Kaas",
+    "email": "Joost@kaas.be",
+    "films":[
+      {
+        "id":2,
+        "titel": "Kill Bill",
+        "score": 85,
+        "acteurs":[{
+
+        }],
+        "genres":[{
+          "genreId":3,
+          "filmId":2
+        }],
+        "titleImage":"zefokef",
+        "runtime":120,
+        "year":2002
+      }
+    ]
+  
+  }
+  
+  
+  
+]

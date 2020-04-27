@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "titel": "Shawshank Redemption",
+      "score": 93,
+      "regisseur": "Frank Darabont",
+      "genres": [
+        "thriller"
+      ],
+      "acteurs": [
+        "Joost Kaas"
+      ],
+      "titleImage": "foto.png",
+      "runtime": 143,
+      "year": 1994,
+      "isFavourite": true
+    },
+    {
+        "id": 2,
+        "titel": "Epic Cheeses",
+        "score": 99,
+        "regisseur": "Frank Darabont",
+        "genres": [
+          "thriller"
+        ],
+        "acteurs": [
+          "Joost Kaas"
+        ],
+        "titleImage": "foto.png",
+        "runtime": 143,
+        "year": 1994,
+        "isFavourite": true
+      }
+  ]

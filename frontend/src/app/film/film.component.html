@@ -1,0 +1,37 @@
+<mat-card class="cardjamin">
+    <mat-card-header>
+        <mat-card-title>{{film.name}}</mat-card-title>
+        
+    </mat-card-header>
+    <img [defaultImage]="'https://media.comicbook.com/files/img/default-movie.png'" [lazyLoad]="titleImage" mat-card-image class="poster">
+    <mat-card-content>
+        <ul>
+            <li><b>directed by: </b>{{ film.regisseur }}</li>
+            <li><b>release date:</b> {{film.year}}</li>
+            
+        </ul>
+        
+           
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button (click)="toggleSelected()" >
+
+            <mat-icon  
+              *ngIf="selected"
+              aria-label="Example icon-button with a heart icon">
+              
+              favorite
+            </mat-icon>
+          
+            <mat-icon  (click)="removeFromFavourites()"
+              *ngIf="!selected"
+              aria-label="Example icon-button with a heart icon">
+              favorite_border
+            </mat-icon>
+          
+          </button>
+        <button mat-button [routerLink]="['/film/detail/', film.id]" >more info</button>
+      </mat-card-actions>
+
+
+</mat-card>

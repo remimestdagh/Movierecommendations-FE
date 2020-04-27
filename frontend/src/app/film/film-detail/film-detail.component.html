@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{film.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image class="poster" src="{{film.titleImage}}">
+    <mat-card-content>
+        <ul>
+            <li><b>score</b> {{ film.score }}</li>
+            <li><b>release date:</b> {{film.year}}</li>
+            <li>genres</li>
+            <ul>
+            <div *ngFor = "let genre of genres">
+                <li>{{genre}}</li>
+            </div>
+        </ul>
+        <li>actors</li>
+        <ul>
+            <div *ngFor = "let acteur of acteurs">
+                <li>{{acteur}}</li>
+            </div>
+        </ul>
+            
+        </ul>
+        
+            
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-icon-button (click)="toggleSelected()" >
+
+            <mat-icon  
+              *ngIf="selected"
+              aria-label="Example icon-button with a heart icon">
+              
+              favorite
+            </mat-icon>
+          
+            <mat-icon  (click)="removeFromFavourites()"
+              *ngIf="!selected"
+              aria-label="Example icon-button with a heart icon">
+              favorite_border
+            </mat-icon>
+          
+          </button>
+    </mat-card-actions>
+
+
+</mat-card>

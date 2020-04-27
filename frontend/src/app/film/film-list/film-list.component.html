@@ -1,0 +1,47 @@
+<div fxLayout="column" fxLayoutGap="4%">
+  <mat-card>
+    <mat-form-field>
+      <input
+        matInput
+        (keyup)="filterFilm$.next($event.target.value)"
+        placeholder="name of movie"
+        type="text"
+        data-cy="filterInput"
+      />
+      
+    </mat-form-field>
+    <button mat-button (click)="searchFilm()"> search</button>
+    <mat-checkbox class="favoFilter" (change)="applyViewFilter($event)" (click)="checked$.next($event.target.value)" data-cy="hider">hide viewed</mat-checkbox>
+  </mat-card>
+  <mat-card class="error" *ngIf="errorMessage" data-cy="appError">
+    got an error while loading the film list: {{ errorMessage }}
+  </mat-card>
+  <div *ngIf="specFilms.length > 0; else loadingOrError">
+    <div
+      fxLayout="row wrap"
+      fxLayout.xs="column"
+      fxLayoutGap="1%"
+      fxLayoutAlign="space-evenly" 
+      infinite-scroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollUpDistance]="2"
+      [infiniteScrollThrottle]="500"
+      (scrolled)="onScroll()" >
+      <div
+        class="film"
+        *ngFor="let film of specFilms | filmFilter: filterFilmName | filmFavoFilter : checked" 
+        fxFlex="0 0 calc(25%-1%)"
+        fxFlex.xs="100%" 
+      >
+        <app-film  [film]="film" data-cy="filmCard"></app-film>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loadingOrError>
+    <span *ngIf="errorMessage; else loading"></span>
+    <ng-template #loading>
+      <mat-spinner></mat-spinner>
+    </ng-template>
+  </ng-template>
+</div>
